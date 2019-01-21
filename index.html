@@ -24,9 +24,14 @@
 		<script type="text/javascript">
 			var box = document.getElementById('box');
 			box.onmousedown = function(ev){
-				var x = ev.pageX - box.offsetLeft;
-				var y = ev.pageY - box.offsetTop;
+				var x1 = ev.pageX - box.offsetLeft;
+				var y1 = ev.pageY - box.offsetTop;
 
+				box.onmousedown = function(ev){
+					
+					box.style.left = ev.pageX - x1 + 'px';
+					box.style.top = ev.pageY - y1 + 'px';
+				}
 			}
 			
 		</script>
